@@ -3,6 +3,34 @@ Dal problema al programma
 Capitolo 1.1: Soluzione dei problemi: processi euristici e processi algoritmici.
 
 Capitolo 1.2: Tecniche di rappresentazione degli algoritmi: flow chart, pseudocodice.
+Flow chart 
+In informatica il diagramma di flusso (in inglese flow chart) è una rappresentazione grafica delle operazioni da eseguire per l'esecuzione di un algoritmo. Ogni singolo passo è visualizzato tramite una serie di simboli standard.Esso consente di descrivere tramite un linguaggio di modellazione grafico:
+le operazioni da compiere, rappresentate mediante sagome convenzionali (rettangoli, rombi, esagoni, parallelogrammi, rettangoli smussati...), ciascuna con un preciso significato logico e all'interno delle quali un'indicazione testuale descrive l'attività da svolgere;
+la sequenza nella quale devono essere compiute, rappresentata con frecce di collegamento.
+Esistono varie notazioni per la rappresentazione con diagrammi di flusso, ma tutte hanno una stessa idea di base:
+si parte dal blocco iniziale
+si segue la freccia in uscita
+si giunge al blocco successivo e si effettua l'operazione descritta nel blocco
+si procede iterando i passi 2 e 3 fino a giungere al blocco finale.
+Tra le operazioni si distinguono:
+azioni, che comportano un'attività o un'elaborazione da svolgere
+test, che indicano due o più direzioni in base a un fattore di decisione (vero o falso)
+ingresso/uscita, che comportano l'immissione di informazioni dall'esterno oppure l'invio di informazioni verso l'esterno
+La notazione più semplice e più frequentemente utilizzata prevede dunque 5 tipi di blocchi elementari:
+Una combinazione di blocchi elementari descrive un algoritmo se:
+viene usato un numero finito di blocchi
+lo schema inizia con un blocco iniziale e termina con un blocco finale
+ogni blocco soddisfa le condizioni di validità:
+ogni freccia deve entrare in un blocco
+ogni blocco azione e/o blocco lettura/scrittura hanno una sola freccia entrante e una sola freccia uscente
+ogni blocco di controllo ha una sola freccia entrante e due frecce uscenti
+dal blocco iniziale deve essere possibile raggiungere ogni blocco
+da ogni blocco deve essere possibile raggiungere il blocco finale
+
+Pseudocodice (da modificare)
+Per pseudocodice, o linguaggio di progettazione si intende un linguaggio il cui scopo è la rappresentazione di algoritmi in alternativa al classico diagramma di flusso e non soggetto a molte limitazioni intrinseche di quest'ultimo tipo di rappresentazione. Non esiste uno pseudolinguaggio standard e convenzionalmente usato: gli autori di libri o corsi di programmazione definiscono spesso un proprio pseudolinguaggio, utilizzato nelle loro pubblicazioni. Ogni pseudolinguaggio ha un proprio lessico, una propria sintassi e una propria semantica, ma la progettazione di questo tipo di formalismo è volta alla comprensibilità e alla leggibilità del codice; la sintassi sarà quindi meno rigorosa rispetto ad un vero linguaggio e le parole chiave saranno evocative, in modo da rendere più intuitiva la sua interpretazione.
+Lo pseudolinguaggio dovrebbe essere indipendente dal linguaggio di programmazione, purché quest'ultimo rispetti naturalmente il paradigma scelto. Tuttavia, ciascun linguaggio di programmazione possiede istruzioni e/o caratteristiche proprie, che potrebbero essere sfruttate per una migliore implementazione dell'algoritmo, ad esempio più efficiente.
+
 Capitolo 1.3: Proprietà degli algoritmi: la programmazione strutturata, complessità.
 La programmazione strutturata
 La programmazione strutturata è nata negli anni 70 per avere un controllo ordinato e sequenziale di blocchi semplici dette funzioni. Le strutture di controllo ammesse dai linguaggi strutturati devono avere un insieme di requisiti fondamentali:
