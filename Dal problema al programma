@@ -1,0 +1,68 @@
+Dal problema al programma
+
+Capitolo 1.1: Soluzione dei problemi: processi euristici e processi algoritmici.
+
+Capitolo 1.2: Tecniche di rappresentazione degli algoritmi: flow chart, pseudocodice.
+Capitolo 1.3: Proprietà degli algoritmi: la programmazione strutturata, complessità.
+La programmazione strutturata
+La programmazione strutturata è nata negli anni 70 per avere un controllo ordinato e sequenziale di blocchi semplici dette funzioni. Le strutture di controllo ammesse dai linguaggi strutturati devono avere un insieme di requisiti fondamentali:
+la completezza, un linguaggio strutturato deve basarsi sulla sequenza, selezione e iterazione dei dati.
+un singolo punto di ingresso e di uscita, ogni struttura di controllo, deve poter essere considerata come una singola macro-istruzione con un ben identificato punto di ingresso e un ben identificato punto di uscita.
+componibilità, ogni struttura di controllo può avere fra le sue istruzioni controllate, altre strutture di controllo.
+Gli ultimi due vincoli fanno sì che, per quanto concerne il flusso del controllo, ciascuna struttura di controllo definisca un ambito completamente isolato dalle altre, e incapace di interferire o subire interferenze. Questo rappresenta un requisito indispensabile per la progettazione top-down e lo sviluppo per raffinamenti successivi.
+Negli anni precedenti si usavano pezzi di sw già esistenti già scritto diminuendo la comprensione e la leggibilità del nuovo sw, con la programmazione strutturata invece la modularità aiuta a comprendere il software anche grazie alla pseudocodifica che traduce in maniera naturale con un proprio lessico, la rappresentazione dell’algoritmo.
+
+La complessità
+Con complessità di un algoritmo o efficienza di un algoritmo ci si riferisce al tempo e alle risorse di calcolo richieste per risolvere un dato problema. Ogni problema può avere più algoritmi risolutivi e ognuno di essi può portare differenti complessità di calcolo in funzione dell’approccio sulla soluzione. La complessità può essere:
+spaziale, solitamente misurata in termini di byte di memoria necessari per memorizzare le informazioni temporanee nel corso dell'esecuzione dell'algoritmo. 
+temporale, è il tempo di elaborazione necessario all'algoritmo per giungere alla soluzione del problema.
+computazionale, non dipende dal sistema di elaborazione, che al massimo inficia i tempi di elaborazione, ma può dipendere dai dati di ingresso, sia come numero che come valore.
+Si introducono approssimazioni che permettano di operare su algoritmi più astratti. In particolare si ricorre alla notazione:
+
+f(n)=O(g(n)), se esiste una coppia di costanti “c>0” e “n0≥0” tali che per ogni n>n0 f(n)≤c*(g(n)) (Es: f(n)= 2n4 e g(n)=n4 con c=3)
+f(n)=o(g(n)), se esiste una coppia di costanti “c>0” e “n0≥0” tali che per ogni n>n0 c*f(n)≤(g(n)) (Es: f(n)= n4 e g(n)=6n4 con c=7)
+f(n)=Փ(g(n)) se f(n) e g(n) crescono alla stessa maniera al variare di “n” 
+(Es: f(n)= n4+2n+1 e g(n)=n4+3n+1)
+
+In linea generale di lavora sempre in funzione di O(g(n)), dove g(n) è:
+1 in caso di algoritmi con 1 operazione e si parla di complessità costante
+log2n in caso di algoritmi come la ricerca binaria e di parla di complessità logaritmica o sottolineare
+n in caso di algoritmi come la ricerca sequenziale e di parla di complessità lineare
+n*log2n in caso di algoritmi di ordinamento ottimi
+nk con k>1 per algoritmi con complessità polinomiale come il Bubble Sort
+kn per algoritmi con complessità esponenziale come quello del commesso viaggiatore.
+Capitolo 1.4: Algoritmi notevoli: (es. ordinamento, ricerca, fusione)
+Con Algoritmi notevoli si definiscono gli algoritmi che vengono usati per ordinare, ricercare o unire degli array di dati secondo una data regola.
+Ci sono diversi algoritmi di ordinamento ma sicuramente i più famosi, da cui derivano poi eventuali variazioni migliorative, sono:
+Ordinamento semplice
+Bubble sort
+Insertion sort
+Shell sort
+
+Ordinamento semplice
+L'ordinamento semplice confronta ogni dato dell’array e con quello di indice superiore e nel caso di esito positivo effettua uno scambio tra gli elementi grazie un dato temporaneo. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e N(N-1)/2 confronti. Nel caso peggiore avremo le stesse operazioni ma ci saranno anche N(N-1)/2 scambi.
+
+Bubble Sort
+L'ordinamento bubble sort è chiamato così perché cerca di far risalire gli elementi maggiori come se fossero delle bolle di sapone. Consiste nella scansione di un array di N elementi, scambiando i valori dei due elementi consecutivi, quando il primo è maggiore del secondo. In questa maniera il valore maggiore tende a spostarsi verso destra. Al termine della scansione, in genere l’array non risulta ordinato e si deve procedere a una nuova scansione e alla conseguente serie di eventuali scambi tra i valori di due elementi consecutivi. Il tutto termina quando non ci sono più scambi o dopo N-1 scansioni. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e confronti. Nel caso peggiore avremo invece N(N-1)/2 scambi e confronti. 
+E’ ottimizzabile eliminando il confronto con gli ultimi “i” elementi dopo “i” passate dato che si trovano gli elementi maggiori del vettore.
+
+Insertion sort
+L’ordinamento insertion sort è un algoritmo di inserimento e dopo aver ordinato i primi due elementi, dal terzo all’ N-esimo elemento vengono inseriti nella posizione corretta dell’array. All’inserimento dell’ultimo elemento l’algoritmo termina l’ordinamento. Con inserimento già ordinato, quindi nel migliore  dei casi, abbiamo N operazioni di confronto, altrimenti si hanno 
+N(N-1)/2 scambi e confronti. 
+
+Shell sort
+Lo shell sort è una estensione dell’insertion sort, dove gli N elementi di un array vengono inseriti in una matrice di H colonne (1<H1<N), successivamente vengono ordinate le singole colonne,  e viene creata una nuova matrice con un numero H2<H1 colonne.
+Ad ogni passata i dati diventano sempre più ordinati, finché, durante l'ultima lo diventano del tutto. Il numero di operazioni di ordinamento necessarie in ciascuna passata è limitato, a causa dell'ordinamento parziale ottenuto nelle passate precedenti. Il tutto termina con H=1, che fa diventare l’algoritmo un insertion sort semplice. Il numero esatto di operazioni dipende dalla sequenza dei valori H. Si possono usare sequenze di fibonacci o potenze di 2p3q o altro.
+H è chiamata anche distanza perché si può lavorare con dei piccoli array di elementi posti a distanza H nell’array principale invece lavorare sulla matrice.
+
+Ricerca Sequenziale
+Un algoritmo di ricerca sequenziale serve a trovare un dato in un insieme di N elementi ordinato o meno. L'algoritmo controlla in sequenza gli elementi dell’array, arrestandosi quando trova uno o tutti gli elementi che soddisfano il criterio di ricerca. Nel caso non venisse trovano alcun elemento corrispondente alla ricerca può restituire come risultato -1, altrimenti viene restituito l’indice o gli indici dell’elemento ricercato. Nel migliore dei casi abbiamo solo 1 confronto se l’elemento si trova nella prima posizione dell’array e non cerchiamo altri indici che soddisfano il criterio di ricerca, altrimenti abbiamo N confronti da fare.
+
+Ricerca Binaria
+Un algoritmo di ricerca binaria individua l'indice di un determinato valore presente solo in un insieme ordinato di dati, come in un dizionario. Si inizia cercando l’elemento nella posizione centrale dell’array, se il dato corrisponde, l’algoritmo termina, altrimenti nel caso il dato da cercare è minore o maggiore del dato centrale si effettua la ricerca nel sottoinsieme di dati a destra o a sinistra del dato centrale (a seconda dell’ordinamento dell’array). Si esegue nuovamente il confronto con il valore centrale del nuovo mini-array e si prosegue fino a quando a quando non viene trovato il valore o la lunghezza dell’ultimo mini-array non è uguale a 1 che ci indica che il valore non è stato trovato. Nel caso migliore abbiamo un solo confronto, nel caso peggiore abbiamo log2N confronti.
+
+Algoritmo di fusione tra vettori
+L’ultimo algoritmo notevole presentato è quello della fusione che partendo da due array ordinati ne ricava un terzo, anch’esso ordinato di lunghezza N. I due array possono essere di lunghezza qualsiasi e in generale non uguale. Inizialmente l’algoritmo esegue i confronti e l’inserimento, poi copia i restanti valori del vettore più lungo nel terzo vettore. Nel migliore dei casi, quando il primo dato di uno dei due vettori è maggiore dell’ultimo dato dell’altro vettore, allora abbiamo solo 1 confronto prima di fare il merge dei 2 vettori, altrimenti dobbiamo eseguire N operazioni di confronto.
+ 
+Capitolo 1.5: Linguaggi formali: sintassi e semantica.
+Capitolo 1.6: Intelligenza artificiale: problem solving, ragionamento, rappresentazione della conoscenza, apprendimento automatico.
