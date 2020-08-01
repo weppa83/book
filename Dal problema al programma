@@ -1,6 +1,29 @@
 Dal problema al programma
 
 Capitolo 1.1: Soluzione dei problemi: processi euristici e processi algoritmici.
+Dato un problema, per arrivare alla sua soluzione si passa generalmente per un processo algoritmico ma ci sono anche altre valide alternative per trovare delle soluzioni non ottime che rispondono bene all’esigenza del programma che sono i risultati dei processi euristici. Andiamo a confrontare adesso i due approcci.
+
+Processi Euristici
+Un processo o algoritmo euristico è un particolare tipo di algoritmo progettato per risolvere un problema più velocemente, nel caso in cui i metodi classici siano troppo lenti (ad esempio, in caso di elevata complessità computazionale) o per trovare una soluzione approssimata, nel caso in cui i metodi classici falliscano nel trovare una soluzione esatta. Il risultato viene ottenuto cercando di equilibrare gli obiettivi e le risorse. Tali processi sono dettati dall’esperienza passata che non segue delle regole ma solo approcci più semplici e veloci. Spesso infatti raggiungono la soluzione prima di un algoritmo classico, oppure non la raggiungono affatto perché non hanno valutato ovviamente tutti gli scenari possibili. Il processo euristico è diviso in fasi:
+qual è il problema?
+che risorse ho e di quali ho bisogno?
+definizione strategie e piani di approccio
+scegliere il piano di soluzione migliore in funzione delle risorse disponibili 
+
+Dato che l’applicazione dell’approccio in base alle risorse è molto soggettivo e gestisce la codifica dei dati, spesso di tende a usare strategie conosciute escludendo a priori delle altre. Questo è noto come impostazione mentale negativa, perché potrebbe eliminare strategie migliori a quelle intraprese, ed è molto legato alla fissità funzionale che definisce il modo di approcciarsi ad un problema sempre secondo il proprio uso comune mentre i dati dovrebbero essere approcciarti con metodi alternativi per raggiungere la soluzione, ovvero bisognerebbe pensare “out of the (own) box”.
+
+Processi Algoritmici
+L’algoritmo, a differenza del processo euristico, è un procedimento di calcolo che segue delle istruzioni in modo ordinato in modo da avere la soluzione del problema proposto. L’algoritmo quindi deve essere:
+generale, deve poter risolvere tutti i problemi della stessa natura e non di uno specifico problema
+finito, il numero di istruzioni e di azioni deve essere finito
+completo, deve analizzare ogni possibile scenario del problema
+non ambiguo, ogni azione deve essere eseguita in maniera univoca e precisa, senza possibili interpretazioni
+eseguibile, deve esistere un agente di calcolo in grado di eseguirlo in un tempo finito
+
+Inoltre gli algoritmi possono essere suddivisi in:
+deterministici
+non deterministici
+Nel primo caso, a parità di dati di ingresso avremo sempre lo stesso risultato con lo stesso percorso interno. Mentre nel secondo, caso ad un certo punto del percorso dell’algoritmo, ci sarà una funzione probabilistica che genera diversi percorsi di soluzione con una diversa probabilità di esecuzione, quindi a parità di dati di ingresso potremmo avere diversi risultati ogni volta che l’algoritmo viene eseguito.
 
 Capitolo 1.2: Tecniche di rappresentazione degli algoritmi: flow chart, pseudocodice.
 Flow chart 
@@ -30,6 +53,7 @@ da ogni blocco deve essere possibile raggiungere il blocco finale
 Pseudocodice (da modificare)
 Per pseudocodice, o linguaggio di progettazione si intende un linguaggio il cui scopo è la rappresentazione di algoritmi in alternativa al classico diagramma di flusso e non soggetto a molte limitazioni intrinseche di quest'ultimo tipo di rappresentazione. Non esiste uno pseudolinguaggio standard e convenzionalmente usato: gli autori di libri o corsi di programmazione definiscono spesso un proprio pseudolinguaggio, utilizzato nelle loro pubblicazioni. Ogni pseudolinguaggio ha un proprio lessico, una propria sintassi e una propria semantica, ma la progettazione di questo tipo di formalismo è volta alla comprensibilità e alla leggibilità del codice; la sintassi sarà quindi meno rigorosa rispetto ad un vero linguaggio e le parole chiave saranno evocative, in modo da rendere più intuitiva la sua interpretazione.
 Lo pseudolinguaggio dovrebbe essere indipendente dal linguaggio di programmazione, purché quest'ultimo rispetti naturalmente il paradigma scelto. Tuttavia, ciascun linguaggio di programmazione possiede istruzioni e/o caratteristiche proprie, che potrebbero essere sfruttate per una migliore implementazione dell'algoritmo, ad esempio più efficiente.
+
 
 Capitolo 1.3: Proprietà degli algoritmi: la programmazione strutturata, complessità.
 La programmazione strutturata
@@ -66,22 +90,25 @@ Ordinamento semplice
 Bubble sort
 Insertion sort
 Shell sort
+Quick sort
 
 Ordinamento semplice
-L'ordinamento semplice confronta ogni dato dell’array e con quello di indice superiore e nel caso di esito positivo effettua uno scambio tra gli elementi grazie un dato temporaneo. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e N(N-1)/2 confronti. Nel caso peggiore avremo le stesse operazioni ma ci saranno anche N(N-1)/2 scambi.
+L'ordinamento semplice confronta ogni dato dell’array e con quello di indice superiore e nel caso di esito positivo effettua uno scambio tra gli elementi grazie un dato temporaneo. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e N(N-1)/2 confronti. Nel caso peggiore avremo le stesse operazioni ma ci saranno anche N(N-1)/2 scambi. Quindi la complessità è sempre dell’ordine di O(N2).
 
 Bubble Sort
-L'ordinamento bubble sort è chiamato così perché cerca di far risalire gli elementi maggiori come se fossero delle bolle di sapone. Consiste nella scansione di un array di N elementi, scambiando i valori dei due elementi consecutivi, quando il primo è maggiore del secondo. In questa maniera il valore maggiore tende a spostarsi verso destra. Al termine della scansione, in genere l’array non risulta ordinato e si deve procedere a una nuova scansione e alla conseguente serie di eventuali scambi tra i valori di due elementi consecutivi. Il tutto termina quando non ci sono più scambi o dopo N-1 scansioni. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e confronti. Nel caso peggiore avremo invece N(N-1)/2 scambi e confronti. 
+L'ordinamento bubble sort è chiamato così perché cerca di far risalire gli elementi maggiori come se fossero delle bolle di sapone. Consiste nella scansione di un array di N elementi, scambiando i valori dei due elementi consecutivi, quando il primo è maggiore del secondo. In questa maniera il valore maggiore tende a spostarsi verso destra. Al termine della scansione, in genere l’array non risulta ordinato e si deve procedere a una nuova scansione e alla conseguente serie di eventuali scambi tra i valori di due elementi consecutivi. Il tutto termina quando non ci sono più scambi o dopo N-1 scansioni. Nel migliore dei casi, quindi con array di N elementi già ordinato avremo N-1 passaggi e confronti con complessità quindi O(N). Nel caso peggiore avremo invece N(N-1)/2 scambi e confronti, quindi la complessità sarà dell’ordine di O(N2).
 E’ ottimizzabile eliminando il confronto con gli ultimi “i” elementi dopo “i” passate dato che si trovano gli elementi maggiori del vettore.
 
 Insertion sort
-L’ordinamento insertion sort è un algoritmo di inserimento e dopo aver ordinato i primi due elementi, dal terzo all’ N-esimo elemento vengono inseriti nella posizione corretta dell’array. All’inserimento dell’ultimo elemento l’algoritmo termina l’ordinamento. Con inserimento già ordinato, quindi nel migliore  dei casi, abbiamo N operazioni di confronto, altrimenti si hanno 
-N(N-1)/2 scambi e confronti. 
+L’ordinamento insertion sort è un algoritmo di inserimento e dopo aver ordinato i primi due elementi, dal terzo all’ N-esimo elemento vengono inseriti nella posizione corretta dell’array. All’inserimento dell’ultimo elemento l’algoritmo termina l’ordinamento. Con inserimento già ordinato, quindi nel migliore dei casi, abbiamo N operazioni di confronto, con complessità quindi O(N). Nel caso peggiore avremo invece N(N-1)/2 scambi e confronti, quindi la complessità sarà dell’ordine di O(N2).
 
 Shell sort
 Lo shell sort è una estensione dell’insertion sort, dove gli N elementi di un array vengono inseriti in una matrice di H colonne (1<H1<N), successivamente vengono ordinate le singole colonne,  e viene creata una nuova matrice con un numero H2<H1 colonne.
 Ad ogni passata i dati diventano sempre più ordinati, finché, durante l'ultima lo diventano del tutto. Il numero di operazioni di ordinamento necessarie in ciascuna passata è limitato, a causa dell'ordinamento parziale ottenuto nelle passate precedenti. Il tutto termina con H=1, che fa diventare l’algoritmo un insertion sort semplice. Il numero esatto di operazioni dipende dalla sequenza dei valori H. Si possono usare sequenze di fibonacci o potenze di 2p3q o altro.
 H è chiamata anche distanza perché si può lavorare con dei piccoli array di elementi posti a distanza H nell’array principale invece lavorare sulla matrice.
+
+Quick sort
+Il quick sort è un algoritmo di ordinamento ricorsivo dove, dopo aver scelto un pivot tra gli N elementi dell’array, si pongono gli elementi minori a sinistra rispetto ad pivot e gli elementi maggiori a destra. L'operazione viene quindi reiterata sui due insiemi risultanti fino al completo ordinamento dell’array. Nel caso migliore Il caso migliore si verifica quando l'algoritmo di partizionamento determina due sottoproblemi perfettamente bilanciati, entrambi di dimensione n/2; in questo caso la complessità è dell’ordine di O(N*log2N). Il caso peggiore si verifica quando lo sbilanciamento è totale, cioè quando l'algoritmo di partizionamento restituisce una partizione di lunghezza N-1 e una di lunghezza 0 dopo aver scelto il pivot, in questo caso avremo N(N-1)/2 scambi e confronti e la complessità è dell’ordine di O(N2).
 
 Ricerca Sequenziale
 Un algoritmo di ricerca sequenziale serve a trovare un dato in un insieme di N elementi ordinato o meno. L'algoritmo controlla in sequenza gli elementi dell’array, arrestandosi quando trova uno o tutti gli elementi che soddisfano il criterio di ricerca. Nel caso non venisse trovano alcun elemento corrispondente alla ricerca può restituire come risultato -1, altrimenti viene restituito l’indice o gli indici dell’elemento ricercato. Nel migliore dei casi abbiamo solo 1 confronto se l’elemento si trova nella prima posizione dell’array e non cerchiamo altri indici che soddisfano il criterio di ricerca, altrimenti abbiamo N confronti da fare.
@@ -94,3 +121,4 @@ L’ultimo algoritmo notevole presentato è quello della fusione che partendo da
  
 Capitolo 1.5: Linguaggi formali: sintassi e semantica.
 Capitolo 1.6: Intelligenza artificiale: problem solving, ragionamento, rappresentazione della conoscenza, apprendimento automatico.
+
